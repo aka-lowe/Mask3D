@@ -5,6 +5,7 @@ import pandas as pd
 from fire import Fire
 from natsort import natsorted
 from loguru import logger
+import os
 
 from datasets.preprocessing.base_preprocessing import BasePreprocessing
 from utils.point_cloud_utils import load_ply_with_normals
@@ -32,7 +33,7 @@ class ScannetPreprocessing(BasePreprocessing):
 
         if self.scannet200:
             self.labels_pd = pd.read_csv(
-                self.data_dir / "scannetv2-labels.combined.tsv",
+                 os.path.join("/dtu/blackhole/0e/169006/ScanNet", "scannetv2-labels.combined.tsv"),
                 sep="\t",
                 header=0,
             )
