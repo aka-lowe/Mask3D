@@ -20,11 +20,11 @@ from datasets.scannet200.scannet200_constants import (
 class ScannetPreprocessing(BasePreprocessing):
     def __init__(
         self,
-        data_dir: str = "./data/raw/scannet/scannet",
-        save_dir: str = "./data/processed/scannet",
+        data_dir: str = "/dtu/datasets2/ScanNet/ScanNetV2",
+        save_dir: str = "/dtu/blackhole/0e/169006/ScanNet/mask3d-preprocessed",
         modes: tuple = ("train", "validation", "test"),
         n_jobs: int = -1,
-        git_repo: str = "./data/raw/scannet/ScanNet",
+        git_repo: str = "/zhome/c8/c/169006/Repos/segment-like-a-robot/externals/Mask3D/third_party/ScanNet",
         scannet200: bool = False,
     ):
         super().__init__(data_dir, save_dir, modes, n_jobs)
